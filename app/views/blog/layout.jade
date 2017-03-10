@@ -1,0 +1,62 @@
+extends ../layout
+
+append css
+  link(rel='stylesheet', href='/css/blog.css')
+
+block main
+  block header
+    .blog-masthead
+      .container
+        nav.blog-nav
+          if pageName === '/'
+            a.blog-nav-item.active(href="/") Home
+          else
+            a.blog-nav-item(href="/") Home
+
+          if pageName === '/about'
+            a.blog-nav-item.active(href="/about") About
+          else
+            a.blog-nav-item(href="/about") About
+
+          if pageName === '/contact'
+            a.blog-nav-item.active(href="/contact") Contact
+          else
+            a.blog-nav-item(href="/contact") Contact
+
+  .container
+    .row
+      .col-sm-8.blog-main
+        block content
+      .col-sm-3.col-sm-offset-1.blog-sidebar
+        .sidebar-module.sidebar-module-inset
+          h4 New Blog
+          p Etiam porta sem malesuada magna
+            | mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+
+        .sidebar-module
+          h4 Blog Books
+          ol.list-unstyled
+            li
+              a(href="#") March 2014
+            li
+              a(href="#") February 2014
+            li
+              a(href="#") January 2014
+            li
+              a(href="#") December 2013
+
+          .sidebar-module
+            h4 Friendly Link
+            ol.list-unstyled
+              li
+                a(href="#") GitHub
+              li
+                a(href="#") Twitter
+              li
+                a(href="#") Facebook
+
+  block footer
+    footer.blog-footer
+      p Node Blog by chenxuhua0530@163.com
+      p
+        a(href="#") Back to top

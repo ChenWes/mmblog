@@ -6,13 +6,14 @@ html(lang='en')
     title= title
     block css
       link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.min.css')
-      link(rel='stylesheet', href='/css/style.css')
+
   body
-    block content
+    block main
 
     block js
       script(src='/components/jquery/dist/jquery.min.js')
       script(src='/components/bootstrap/dist/js/bootstrap.min.js')
       if ENV_DEVELOPMENT
         script(src='http://localhost:35729/livereload.js')
+
     block scripts
