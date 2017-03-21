@@ -9,10 +9,11 @@ module.exports = function (app) {
 
 router.get('/', function (req, res, next) {
   Post.find(function (err, posts) {
+    // return res.json(posts);
     if (err) return next(err);
     res.render('blog/index', {
       title: 'Node Blog Home',
-      Posts: posts,
+      posts: posts,
       pretty: true
     });
   });

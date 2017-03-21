@@ -3,6 +3,12 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  if posts
+    each post in posts
+      h1.post-title
+        =post.title
+      div.post-content
+        =post.content
 
 block scripts
   script
